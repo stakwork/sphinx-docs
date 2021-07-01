@@ -164,7 +164,35 @@
                                 <h1 id="sphinx-bots">Sphinx Bots!</h1>
 <p>The Sphinx bot framework is inspired by Discord&apos;s bot creation library. So far we have only implemented simple Message creation, but there are exciting times ahead for bot developers on Sphinx!</p>
 <h3 id="creating-a-bot">Creating a bot</h3>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> hi = <span class="hljs-string">&apos;hi&apos;</span>
+<p>Bots can be created on your sphinx-relay instance. By creating a bot, you are generating a bridge from the Lightning Network to the regular web (http). Bots are secured with a secret key that is generated when a bot is created.</p>
+<p><strong>connect your bot</strong></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Sphinx.Client()
+client.login(process.env.SPHINX_TOKEN)
+</code></pre>
+<p><strong>create a bot Message</strong></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> embed = <span class="hljs-keyword">new</span> Sphinx.MessageEmbed()
+    .setAuthor(<span class="hljs-string">&apos;TestBot&apos;</span>)
+    .setDescription(<span class="hljs-string">&apos;Welcome to TestBot!&apos;</span>)
+</code></pre>
+<p><strong>respond to a &quot;bot install&quot; message</strong></p>
+<pre><code class="lang-js">client.on(msg_types.INSTALL, <span class="hljs-keyword">async</span> (message) =&gt; {
+    <span class="hljs-keyword">const</span> embed = <span class="hljs-keyword">new</span> Sphinx.MessageEmbed()
+        .setAuthor(<span class="hljs-string">&apos;TestBot&apos;</span>)
+        .setDescription(<span class="hljs-string">&apos;Welcome to TestBot!&apos;</span>)
+        .setThumbnail(<span class="hljs-string">&apos;&lt;svg&gt;&lt;/svg&gt;&apos;</span>)
+    message.channel.send({ embed })
+})
+</code></pre>
+<p><strong>respond to a chat message</strong></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> embed = <span class="hljs-keyword">new</span> Sphinx.MessageEmbed()
+    .setAuthor(<span class="hljs-string">&apos;TestBot&apos;</span>)
+    .setTitle(<span class="hljs-string">&apos;TestBot Message:&apos;</span>)
+    .addFields([
+        { <span class="hljs-attr">name</span>: <span class="hljs-string">&apos;Item #1:&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;hello&apos;</span>, <span class="hljs-attr">inline</span>: <span class="hljs-literal">true</span> },
+        { <span class="hljs-attr">name</span>: <span class="hljs-string">&apos;Item #2:&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;hello again&apos;</span>, <span class="hljs-attr">inline</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&apos;#00FF00&apos;</span> }
+    ])
+    .setThumbnail(<span class="hljs-string">&apos;&lt;svg&gt;&lt;/svg&gt;&apos;</span>)
+message.channel.send({ embed })
 </code></pre>
 
                                 
@@ -205,7 +233,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Bots","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["honkit-plugin-theme-osiris"],"pluginsConfig":{"honkit-plugin-theme-osiris":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BOTS.md","mtime":"2021-07-01T00:53:44.435Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-01T00:53:58.629Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Bots","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["honkit-plugin-theme-osiris"],"pluginsConfig":{"honkit-plugin-theme-osiris":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BOTS.md","mtime":"2021-07-01T02:24:17.070Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-01T02:25:39.792Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
