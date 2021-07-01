@@ -11,5 +11,8 @@
   "devDependencies": {
     "honkit": "^3.6.20",
     "honkit-plugin-theme-osiris": "^1.0.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
