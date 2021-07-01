@@ -1,12 +1,11 @@
-# Sphinx Bots!
-
-The [Sphinx Javascript bot framework](https://github.com/stakwork/sphinx-bots) is inspired by Discord's bot creation library. So far we have only implemented simple Message creation, but there are exciting times ahead for bot developers on Sphinx!
 
 ![](https://github.com/stakwork/sphinx-docs/blob/master/bots/bots.png?raw=true)
 
+The [Sphinx Javascript bot framework](https://github.com/stakwork/sphinx-bots) is inspired by Discord's bot creation library. So far we have only implemented simple Message creation, but there are exciting times ahead for bot developers on Sphinx!
+
 ### How it works
 
-![](https://github.com/stakwork/sphinx-docs/blob/master/bots/bots_architecture.jpg?raw=true)
+![](https://github.com/stakwork/sphinx-docs/blob/master/bots/bots_architecture.png?raw=true)
 
 ### MotherBot
 
