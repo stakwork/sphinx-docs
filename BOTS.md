@@ -46,3 +46,23 @@ client.on(msg_types.MESSAGE, async (message) => {
     message.channel.send({ embed })
 })
 ```
+
+# API
+
+- ### `setTitle(title:string)`
+- ### `setAuthor(author:string)`
+- ### `setColor(color:string)`
+- ### `setDescription(desc:string)`
+- ### `setThumbnail(thumb:string)`
+- ### `setImage(image:string)`
+- ### `addField(f:Field)`
+- ### `addFields(fs:Field[])` 
+```json
+// "fields" are items in a list:
+{
+    "name": "string",
+    "value": "string",
+    "inline?": "boolean",
+    "color?": "string"
+}
+```

@@ -197,6 +197,33 @@ client.login(process.env.SPHINX_TOKEN)
     message.channel.send({ embed })
 })
 </code></pre>
+<h1 id="api">API</h1>
+<ul>
+<li><h3 id="settitletitlestring"><code>setTitle(title:string)</code></h3>
+</li>
+<li><h3 id="setauthorauthorstring"><code>setAuthor(author:string)</code></h3>
+</li>
+<li><h3 id="setcolorcolorstring"><code>setColor(color:string)</code></h3>
+</li>
+<li><h3 id="setdescriptiondescstring"><code>setDescription(desc:string)</code></h3>
+</li>
+<li><h3 id="setthumbnailthumbstring"><code>setThumbnail(thumb:string)</code></h3>
+</li>
+<li><h3 id="setimageimagestring"><code>setImage(image:string)</code></h3>
+</li>
+<li><h3 id="addfieldffield"><code>addField(f:Field)</code></h3>
+</li>
+<li><h3 id="addfieldsfsfield"><code>addFields(fs:Field[])</code></h3>
+<pre><code class="lang-json"><span class="hljs-comment">// &quot;fields&quot; are items in a list:</span>
+{
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-string">&quot;inline?&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-string">&quot;color?&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -236,7 +263,7 @@ client.login(process.env.SPHINX_TOKEN)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Bots","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["honkit-plugin-theme-osiris"],"pluginsConfig":{"honkit-plugin-theme-osiris":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BOTS.md","mtime":"2021-07-01T02:34:41.117Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-01T02:37:54.647Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Bots","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["honkit-plugin-theme-osiris"],"pluginsConfig":{"honkit-plugin-theme-osiris":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BOTS.md","mtime":"2021-07-01T05:18:42.141Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-01T05:24:04.349Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
