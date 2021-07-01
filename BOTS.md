@@ -1,13 +1,26 @@
 # Sphinx Bots!
 
-The Sphinx bot framework is inspired by Discord's bot creation library. So far we have only implemented simple Message creation, but there are exciting times ahead for bot developers on Sphinx!
+The [Sphinx Javascript bot framework](https://github.com/stakwork/sphinx-bots) is inspired by Discord's bot creation library. So far we have only implemented simple Message creation, but there are exciting times ahead for bot developers on Sphinx!
+
+![](https://github.com/stakwork/sphinx-docs/blob/master/bots/bots.png?raw=true)
+
+### How it works
+
+![](https://github.com/stakwork/sphinx-docs/blob/master/bots/bots_architecture.jpg?raw=true)
+
+### MotherBot
+
+Every sphinx-relay instance has a built-in bot called `MotherBot`. MotherBot is how you can search, install, and uninstall bots. 
+
+- `/bot search Bitcoin`
+- `/bot install btc`
+- `/bot uninstall btc`
 
 ### Creating a bot
 
-Bots can be created on your sphinx-relay instance. By creating a bot, you are generating a bridge from the Lightning Network to the regular web (http). Bots are secured with a secret key that is generated when a bot is created.
+Bots can be created on your sphinx-relay instance. By creating a bot, you are generating a bridge from the Lightning Network to the regular web (http). Bots are secured with a secret key that is generated when a bot is created. HTTPS should be used for all Bot endpoints.
 
 **connect your bot**
-
 ```js
 const client = new Sphinx.Client()
 client.login(process.env.SPHINX_TOKEN)
@@ -49,6 +62,11 @@ client.on(msg_types.MESSAGE, async (message) => {
 
 # API
 
+### Client
+- `new Sphinx.Client()`
+- `client.login(process.env.SPHINX_TOKEN)`
+
+### MessageEmbed
 - ### `setTitle(title:string)`
 - ### `setAuthor(author:string)`
 - ### `setColor(color:string)`

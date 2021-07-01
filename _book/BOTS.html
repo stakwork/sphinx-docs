@@ -162,9 +162,18 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="sphinx-bots">Sphinx Bots!</h1>
-<p>The Sphinx bot framework is inspired by Discord&apos;s bot creation library. So far we have only implemented simple Message creation, but there are exciting times ahead for bot developers on Sphinx!</p>
+<p>The <a href="https://github.com/stakwork/sphinx-bots" target="_blank">Sphinx Javascript bot framework</a> is inspired by Discord&apos;s bot creation library. So far we have only implemented simple Message creation, but there are exciting times ahead for bot developers on Sphinx!</p>
+<h3 id="how-it-works">How it works</h3>
+<p>architecture diagram</p>
+<h3 id="motherbot">MotherBot</h3>
+<p>Every sphinx-relay instance has a built-in bot called <code>MotherBot</code>. MotherBot is how you can search, install, and uninstall bots. </p>
+<ul>
+<li><code>/bot search Bitcoin</code></li>
+<li><code>/bot install btc</code></li>
+<li><code>/bot uninstall btc</code></li>
+</ul>
 <h3 id="creating-a-bot">Creating a bot</h3>
-<p>Bots can be created on your sphinx-relay instance. By creating a bot, you are generating a bridge from the Lightning Network to the regular web (http). Bots are secured with a secret key that is generated when a bot is created.</p>
+<p>Bots can be created on your sphinx-relay instance. By creating a bot, you are generating a bridge from the Lightning Network to the regular web (http). Bots are secured with a secret key that is generated when a bot is created. HTTPS should be used for all Bot endpoints.</p>
 <p><strong>connect your bot</strong></p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Sphinx.Client()
 client.login(process.env.SPHINX_TOKEN)
@@ -198,6 +207,12 @@ client.login(process.env.SPHINX_TOKEN)
 })
 </code></pre>
 <h1 id="api">API</h1>
+<h3 id="client">Client</h3>
+<ul>
+<li><code>new Sphinx.Client()</code></li>
+<li><code>client.login(process.env.SPHINX_TOKEN)</code></li>
+</ul>
+<h3 id="messageembed">MessageEmbed</h3>
 <ul>
 <li><h3 id="settitletitlestring"><code>setTitle(title:string)</code></h3>
 </li>
@@ -263,7 +278,7 @@ client.login(process.env.SPHINX_TOKEN)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Bots","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["honkit-plugin-theme-osiris"],"pluginsConfig":{"honkit-plugin-theme-osiris":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BOTS.md","mtime":"2021-07-01T05:18:42.141Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-01T05:24:04.349Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Bots","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["honkit-plugin-theme-osiris","livereload"],"pluginsConfig":{"honkit-plugin-theme-osiris":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BOTS.md","mtime":"2021-07-01T16:12:17.019Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-01T16:12:25.538Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -315,6 +330,10 @@ client.login(process.env.SPHINX_TOKEN)
     </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
