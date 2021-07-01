@@ -33,13 +33,16 @@ client.on(msg_types.INSTALL, async (message) => {
 
 **respond to a chat message**
 ```js
-const embed = new Sphinx.MessageEmbed()
-    .setAuthor('TestBot')
-    .setTitle('TestBot Message:')
-    .addFields([
-        { name: 'Item #1:', value: 'hello', inline: true },
-        { name: 'Item #2:', value: 'hello again', inline: true, color: '#00FF00' }
-    ])
-    .setThumbnail('<svg></svg>')
-message.channel.send({ embed })
+client.on(msg_types.MESSAGE, async (message) => {
+    // do something here!
+    const embed = new Sphinx.MessageEmbed()
+        .setAuthor('TestBot')
+        .setTitle('TestBot Message:')
+        .addFields([
+            { name: 'Item #1:', value: 'hello', inline: true },
+            { name: 'Item #2:', value: 'hello again', inline: true, color: '#00FF00' }
+        ])
+        .setThumbnail('<svg></svg>')
+    message.channel.send({ embed })
+})
 ```
